@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
   initializeForm() {
     this.HomeForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
-      lastName: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
+      lastName: ['', [Validators.required, Validators.pattern('[a-zA-Z]|^([A-Za-z] [A-Za-z]|[A-Za-z]+)$')]],
+      // lastName: ['', [Validators.required, Validators.pattern('^([A-Za-z]+([A-Za-z]+)*)$')]],
       age: [
         '',
         [
