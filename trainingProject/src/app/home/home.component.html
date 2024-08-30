@@ -39,11 +39,7 @@
       <input type="number" class="form-control" formControlName="age" min="1" />
     </div>
     <div>
-      <label
-        >Gender<span *ngIf="HomeForm.get('gender')?.touched" class="text-danger"
-          >*</span
-        ></label
-      >
+      <label>Gender </label>
       <div class="form-check">
         <input
           class="form-check-input"
@@ -65,7 +61,7 @@
     </div>
     <br />
     <button
-      type="submit"
+      type="button"
       class="mx-auto p-2 btn btn-primary"
       (click)="onSubmit()"
     >
