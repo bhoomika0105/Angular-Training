@@ -1,0 +1,27 @@
+
+<section class="section d-flex flex-column">
+  <div class="d-flex justify-content-between pt-4 ">
+<p class="fs-4">User detailes</p>
+<button type="button" class="btn btn-outline-primary btn-sm " (click)="onClickBack()">Back</button>
+</div>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th >Id</th>
+          <th >First name</th>
+          <th >Last name</th>
+          <th >Age</th>
+          <th >Gender</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let value of values; let i= index ">
+        <td>{{i+1}}</td>
+        <td >{{value.firstName}}</td>
+        <td >{{value.lastName}}</td>
+        <td >{{value.age}}</td>
+        <td >{{value.gender}}</td>
+      </tbody>
+</table>
+</section>
+

@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
   constructor(
     private fb: FormBuilder,
-    route: Router,
+    private route: Router,
     private service: homeService
   ) {}
 
@@ -42,14 +42,15 @@ export class HomeComponent implements OnInit {
     });
   }
   onSubmit() {
-    // Object.keys(this.HomeForm.controls).forEach((controlName) => {
-    //   this.HomeForm.get(controlName)?.markAllAsTouched();
-    // });
+    Object.keys(this.HomeForm.controls).forEach((controlName) => {
+      this.HomeForm.get(controlName)?.markAllAsTouched();
+    });
 
     if (this.HomeForm.valid) {
       const user = this.HomeForm.value;
       this.service.addDetailes(user);
       console.log('user detailes', user);
+      this.route.navigate(['/user']);
     }
   }
 }
